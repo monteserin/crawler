@@ -5,6 +5,12 @@ import builder from 'xmlbuilder';
 
 process.setMaxListeners(0);
 
+
+app.get('/', asyncHandler(async (req, res) => {
+  res.sendFile('../../views/index.html', { root: __dirname })
+
+}));
+
 const Api = (app) => {
   app.get('/audit-domain', asyncHandler(async (req, res) => {
     const url = 'https://pablomonteserin.com';
